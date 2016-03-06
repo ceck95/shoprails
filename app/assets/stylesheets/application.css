@@ -10,6 +10,18 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap
+ *= require style
+ *= require owl.carousel
+ *= require owl.theme
+ *= require font-awesome
+ *= require animate
+ *= require jquery.mCustomSrollbar
+ *= require alpha
+ *= require smoothproducts
+ *= require all
+ *= require skin-0
+ *= require btn
  *= require bootstrap-editable.css
  *= require_tree .
  *= require_self
