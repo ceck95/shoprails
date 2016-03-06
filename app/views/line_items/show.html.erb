@@ -1,0 +1,16 @@
+<div class="banner"></div>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= best_in_place @line_item, :product %>
+  <h1><%= editable @line_item, :quantity %></h1>
+</p>
+
+<p>
+  <strong>Cart:</strong>
+  <%= @line_item.cart %>
+</p>
+<a href="#" id="username" data-type="text" data-resource="post" data-name="username" data-url="/posts/1" data-original-title="Enter username">superuser</a>
+<%= link_to 'Edit', edit_line_item_path(@line_item) %> |
+<%= link_to 'Back', line_items_path %>

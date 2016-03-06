@@ -1,0 +1,11 @@
+if ($('#cart').length == 0){
+	$('#testnecon').append('<div class="deelay"><div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success!</strong> Added product.</div></div>');
+	$('.deelay').fadeOut(5000);
+}
+else{
+	$('.alert').hide("slow");
+	$('#cart').html("<%= escape_javascript render(@cart) %>");
+	$('#cart').css({'background-color':'#27AE60'}).animate({'background-color':'#4EC67F'}, 1000);
+	$('#testnecon').append('<div class="deelay"><div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= image_tag("tick.png",size: "16x16", alt: "Tick success") %> Added product.</div></div>');
+	$('.deelay').fadeOut(10000);
+}

@@ -1,0 +1,29 @@
+<% @products.each do |product| %>
+                      <% cache ['entry', product] do %>
+                        <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6 entry">
+                                    <div class="product">
+                                        <div class="image">
+                                            <div class="quickview">
+                                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="viewproduct/index.html"
+                                                   data-target="#productSetailsModalAjax">Quick View </a>
+                                            </div>
+                                            <a href="product-details.html"><img src="<%= image_path(product.image_url) %>" alt="img"
+                                                                                class="img-responsive"></a></div>
+                                        <div class="description">
+                                            <h4><a href="product-details.html"><%= product.title %></a></h4>
+
+                                            <p><%= truncate(product.description) %></p>
+                                        </div>
+                                        <div class="price"><span><%= number_to_currency(product.price) %></span></div>
+                                        <div class="action-control">
+                                        <% if session[:user_id] %>
+                                        <%= button_to 'Add to cart', add_to_path(product_id: product),
+                                          remote: true , :class => "btn btn-primary"%>
+                                        <% else %>
+                                        <button class ="btn btn-primary" disabled>Add to cart</button>
+                                        <% end %>
+                                        </div>
+                                    </div>
+                        </div>
+                      <% end %>
+                    <% end %>

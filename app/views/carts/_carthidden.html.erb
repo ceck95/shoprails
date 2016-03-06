@@ -1,0 +1,24 @@
+<div class="cartMenu  col-lg-4 col-xs-12 col-md-4 ">
+                <div class="w100 miniCartTable scroll-pane">
+                    <table>
+                        <tbody>
+                        <% if(@cart.line_items.empty?) %>
+                                    <tr class="miniCartProduct">
+                                        <td> <strong>No Products</strong></td>
+                                    </tr>
+                                <% else %>
+                                    <%= render file: '/line_items/_line_items.html' %>  
+                                <% end %>
+                        </tbody>
+                    </table>
+                </div>
+                <!--/.miniCartTable-->
+
+                <div class="miniCartFooter  miniCartFooterInMobile text-right">
+                    <h3 class="text-right subtotal"> Subtotal: <%= number_to_currency(@cart.total_price) %></h3>>
+                    <%= link_to raw('<i class="fa fa-shopping-cart"> </i> DELETE CART'), cart, method: :delete,data: { confirm: 'Bạn muốn xóa tất cả các sản phẩm ?' }, :class => "btn btn-sm btn-danger" %>
+                    <%= link_to "CHECKOUT", new_order_path, method: :get,:class => "btn btn-sm btn-primary" %>
+                    </div>
+                <!--/.miniCartFooter-->
+
+            </div>

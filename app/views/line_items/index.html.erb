@@ -1,0 +1,126 @@
+<% title "TSHOP || My Cart" %>
+<div class="container main-container headerOffset">
+    <div class="row">
+        <div class="breadcrumbDiv col-lg-12">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Category</a></li>
+                <li class="active">Cart</li>
+            </ul>
+        </div>
+    </div>
+    <!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-7 col-xs-6 col-xxs-12 text-center-xs">
+            <h1 class="section-title-inner"><span><i
+                    class="glyphicon glyphicon-shopping-cart"></i> Shopping cart </span></h1>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-5 rightSidebar col-xs-6 col-xxs-12 text-center-xs">
+            <h4 class="caps"><a href="category.html"><i class="fa fa-chevron-left"></i> Back to shopping </a></h4>
+        </div>
+    </div>
+    <!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-7">
+            <div class="row userInfo">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="cartContent w100">
+                        <table class="cartTable table-responsive" style="width:100%">
+                            <tbody>
+
+                            <tr class="CartProduct cartTableHeader">
+                                <td style="width:15%"> Product</td>
+                                <td style="width:40%">Details</td>
+                                <td style="width:10%" class="delete">&nbsp;</td>
+                                <td style="width:10%">QNT</td>
+                                <td style="width:5%">Total</td>
+                            </tr>
+                            <% if @line_items.blank? %>
+                            <tr class="CartProduct"><td class="CartDescription"><strong>No product</strong></td></tr>
+                            <% else %>
+                            <% @line_items.each do |line_item| %>
+                            <tr class="CartProduct">
+                                <td class="CartProductThumb">
+                                    <div><a href="product-details.html"><img src="<%= image_path(line_item.product.image_url) %>" alt="img"></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="CartDescription">
+                                        <h4><a href="product-details.html"><%= line_item.product.title %> </a></h4>
+
+                                        <div class="price"><span><%= number_to_currency(line_item.product.price) %></span></div>
+                                    </div>
+                                </td>
+                                <td class="delete">
+                                <%= link_to raw('<i
+                                        class="glyphicon glyphicon-trash fa-2x"></i>'), line_item, method: :delete, data: { confirm: 'Are you sure?' } %>
+                                </td>
+                                <td>
+                                <%= form_for :line_item,:url => my_carts_update_path(id: line_item.id) do |f| %>
+                                <%= f.text_field :quantity,class: "quanitySniper",:value => line_item.quantity %>
+                                <%= f.submit "Set",:class => "btn btn-default" %>
+                                <% end %>
+                                </td>
+                                <td class="price"><%= number_to_currency(line_item.total_price) %></td>
+                            </tr>
+                            <% end %>
+                            <% end %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--cartContent-->
+
+                    <div class="cartFooter w100">
+                        <div class="box-footer">
+                            <div class="pull-left">
+                            <a data-confirm="Would you like delete all?" class="btn btn-block btn-danger" rel="nofollow" data-method="delete" href="<%= url_for(@cart) %>"><i class="fa fa-shopping-cart"> </i> DELETE CART</a> 
+                            </div>
+                            <div class="pull-right">
+                                <a class="btn btn-primary btn-block "
+                                                                          title="checkout" href="checkout-0.html"
+                                                                          style="margin-bottom:20px"> Proceed to
+                        checkout &nbsp; <i class="fa fa-arrow-right"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ cartFooter -->
+
+                </div>
+            </div>
+            <!--/row end-->
+
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-5 rightSidebar">
+            <div class="contentBox">
+                <div class="w100 costDetails">
+                    <div class="table-block" id="order-detail-content">
+                        <div class="w100 cartMiniTable">
+                            <table id="cart-summary" class="std table">
+                                <tbody>
+                                <tr>
+                                    <td>Total products</td>
+                                    <td class="price"><%= @line_items.count %></td>
+                                </tr>
+                                <tr>
+                                    <td>Total price</td>
+                                    <td class="price"><%= number_to_currency(@cart.total_price) %></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End popular -->
+
+        </div>
+        <!--/rightSidebar-->
+
+    </div>
+    <!--/row-->
+
+    <div style="clear:both"></div>
+</div>
+<!-- /.main-container -->

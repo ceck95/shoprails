@@ -1,0 +1,31 @@
+<div class="dropdown  cartMenu ">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i
+                        class="fa fa-shopping-cart"> </i> <span class="cartRespons"> Cart (<%= number_to_currency(cart.total_price) %>) </span> <b
+                        class="caret"> </b> </a>
+
+                    <div class="dropdown-menu col-lg-4 col-xs-12 col-md-4 ">
+                        <div>
+                            <table>
+                                <tbody>
+                                <% if(@cart.line_items.empty?) %>
+									<tr class="miniCartProduct">
+										<td> <strong>No Products</strong></td>
+									</tr>
+								<% else %>
+                                	<%= render(cart.line_items) %>	
+                                <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--/.miniCartTable-->
+
+                        <div class="miniCartFooter text-right">
+                            <h3 class="text-right subtotal"> Subtotal: <%= number_to_currency(@cart.total_price) %></h3>
+                            <%= link_to raw('<i class="fa fa-shopping-cart"> </i> VIEW CART'),my_carts_path, :class => "btn btn-sm btn-danger" %>
+                            <%= link_to "CHECKOUT", new_order_path, method: :get,:class => "btn btn-sm btn-primary" %>
+                        </div>
+                        <!--/.miniCartFooter-->
+
+                    </div>
+                    </div>
+                    <!--/.dropdown-menu-->

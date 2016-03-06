@@ -1,0 +1,8 @@
+vi:
+  layouts:
+    application:
+      title: "Trang chủ"
+      home: "Questions"
+      questions: "Questions"
+      news: "News"
+      contact: "Contact"
