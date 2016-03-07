@@ -10,18 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap
- *= require style
- *= require owl.carousel
- *= require owl.theme
- *= require font-awesome
- *= require animate
- *= require jquery.mCustomSrollbar
- *= require alpha
- *= require smoothproducts
- *= require all
- *= require skin-0
- *= require btn
  *= require bootstrap-editable.css
  *= require_tree .
  *= require_self
@@ -66,27 +54,27 @@
 /* IMPORT CSS 
 /* =============================================================== */
 
-@import url("/assets/css/owl.carousel.css");
+@import url("owl.carousel.css");
 /* owl.carousel */
-@import url("/assets/css/owl.theme.css");
+@import url("owl.theme.css");
 /* owl.carousel */
-@import url("/assets/css/font-awesome.css");
+@import url("font-awesome.css");
 /* Font Awesome Icon */
-@import url("/assets/css/animate.min.css");
+@import url("animate.min.css");
 /* css3 animation */
-@import url("/assets/css/jquery.mCustomScrollbar.css");
+@import url("jquery.mCustomScrollbar.css");
 /* mCustomScrollbar */
-@import url("/assets/css/alpha.css");
+@import url("alpha.css");
 /* Background opacity IE fix */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css");
 /* jQuery Custom Select by select2 */
-@import url("/assets/css/smoothproducts.css");
+@import url("smoothproducts.css");
 /* Product zoom  */
-@import url("../plugins/icheck-1.x/skins/all.css");
+@import url("all.css");
 /* ion.checkRadio.min.js || customs checkbox and radio plugin  */
-@import url("/assets/css/skin-0.css");
+@import url("skin-0.css");
 /* btn styled from btn.less  */
-@import url("/assets/css/btn.css");
+@import url("btn.css");
 /* Template Theme color skin */
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic);
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
