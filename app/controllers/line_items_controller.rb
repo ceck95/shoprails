@@ -8,7 +8,6 @@ class LineItemsController < ApplicationController
   # GET /line_items.json
   def index
     @line_items = LineItem.where(cart_id: session[:cart_id])
-    @carts = Cart.where(id: session[:cart_id])
   end
 
   # GET /line_items/1
@@ -30,7 +29,6 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    if session[:user_id]
     product = Product.find(params[ :product_id])
     @line_item = @cart.add_product(product.id)
       respond_to do |format|
@@ -44,11 +42,6 @@ class LineItemsController < ApplicationController
           format.json { render json: @line_item.errors, status: :unprocessable_entity }
         end
       end
-    else
-      respond_to do |format|
-        format.js
-      end
-    end
   end
 
   # PATCH/PUT /line_items/1

@@ -10,6 +10,12 @@ module CurrentCart
 			    @cart = Cart.create(:user_id => session[:user_id])
 			    session[:cart_id] = @cart.id 
 			end
+			else
+				@cart = Cart.find_by(id: session[:cart_id])
+				unless @cart
+				@cart = Cart.create
+				session[:cart_id] = @cart.id 
+				end
 			end		
 		end
 end

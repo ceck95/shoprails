@@ -1,4 +1,6 @@
-// $('#remote').html('<%= escape_javascript(paginate(@products, :remote => true).to_s) %>');
-// $('#remote-data').html('<%= escape_javascript(render "remote") %>');
-$('#remote-data').append("<%= escape_javascript(render :partial => 'remote')%>");
-$('#load_more_link').replaceWith("<%= escape_javascript(link_to_next_page(@products, 'Load More', :remote => true, :id=>'load_more_link'))%>");
+//Phan trang
+$('#remote').html('<%= escape_javascript(paginate(@products, :remote => true).to_s) %>');
+$('#remote-data').html('<%= escape_javascript(render "remote") %>');
+//Load more
+// $('#remote-data').append("<%= escape_javascript(render :partial => 'remote')%>");
+// $('#load_more_link').replaceWith("<%= escape_javascript(link_to_next_page(@products, 'Load More', :remote => true, :id=>'load_more_link'))%>");

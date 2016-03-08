@@ -1,42 +1,48 @@
-<div class="depot_form">
-
 <%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %>
-        prohibited this user from being saved:</h2>
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times; </button>
+                <h3 class="modal-title-site text-center"> REGISTER </h3>
+            </div>
+            <div class="modal-body">
+                <div class="control-group"><a class="fb_button btn  btn-block btn-lg " href="#"> SIGNUP WITH
+                    FACEBOOK </a></div>
+                <h5 style="padding:10px 0 10px 0;" class="text-center"> OR </h5>
 
-  <fieldset>
-  <legend>Enter User Details</legend>
+                <div class="form-group reg-username">
+                    <div>
+                         <%= f.text_field :name,placeholder: 'Enter Name',class: 'form-control'%>
+                    </div>
+                </div>
+                <div class="form-group reg-email">
+                    <div>
+                       <%= f.password_field :password,placeholder: 'Enter Password' %>
+                    </div>
+                </div>
+                <div class="form-group reg-password">
+                    <div>
+                        <%= f.password_field :password_confirmation,placeholder: 'Enter Password' %>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <div class="checkbox login-remember">
+                            <label>
+                                <input name="rememberme" id="rememberme" value="forever" checked="checked"
+                                       type="checkbox">
+                                Remember Me </label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <%= f.submit "REGISTER",:class => "btn  btn-block btn-lg btn-primary" %>
+                    </div>
+                </div>
+                <!--userForm-->
 
-  <div class="field">
-    <%= f.label :name, 'Name:' %>
-    <%= f.text_field :name, size: 40 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password, 'Password:' %>
-    <%= f.password_field :password, size: 40 %>
-  </div>
-
-  
-  <div class="field">
-    <%= f.label :password_confirmation, 'Confirm:' %>
-    <%= f.password_field :password_confirmation, size: 40 %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-  </fieldset>
+            </div>
+            <div class="modal-footer">
+                <p class="text-center"> Already member? <a data-toggle="modal" data-dismiss="modal" href="#ModalLogin">
+                    Sign in </a></p>
+            </div>
 <% end %>
-
-</div>

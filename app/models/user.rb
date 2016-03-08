@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-  validates :name, uniqueness: true, presence: {message: "Can't be bank"}
-  has_secure_password
+  validates :name, uniqueness: {message: "already name"}, presence: true
+  has_secure_password	
   after_destroy :ensure_an_admin_remains
+  validates :password, presence: true, length: {within: 4..10}
   has_one :cart
   private 
 	  def ensure_an_admin_remains

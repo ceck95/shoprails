@@ -1,3 +1,4 @@
+<%= line_item.id %>
 <tr class="miniCartProduct">
     <td style="width:20%" class="miniCartProductThumb">
         <div><a href="product-details.html"> <img src="<%= image_path(line_item.product.image_url) %> " alt="img">
@@ -6,8 +7,6 @@
     <td style="width:40%">
         <div class="miniCartDescription">
             <h4><a href="product-details.html"> <%= line_item.product.title %> </a></h4>
-            <span class="size"> 12 x 1.5 L </span>
-
             <div class="price"><span> <%= number_to_currency(line_item.product.price) %> </span></div>
         </div>
     </td>

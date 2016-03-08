@@ -1,10 +1,5 @@
 <div class="banner"></div>
 <div class="container container-main">
-<div class="alert alert-info fade in">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
-  </div>
-<%= truncate("Once upon a time in a world far far away", length: 17) %>
 <h1>Listing products</h1>
 <div id="remote">
 <%= paginate @products, :remote => true %>
@@ -13,7 +8,7 @@
   <%= render :partial => "remote" %>
 </div>
 <br />
-<%= link_to_next_page @products, 'Load More', :remote => true, :id=>"load_more_link" %>
+<%= link_to_next_page @products, 'Load More', :remote => true, :id=>"load_morelink" %>
 
 <%= link_to 'New product', new_product_path %>
 </div>

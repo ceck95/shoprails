@@ -17,8 +17,8 @@
                                 </tbody>
                             </table>
                         </div>
+                        aaa<%= session[:cart_id] %>
                         <!--/.miniCartTable-->
-
                         <div class="miniCartFooter text-right">
                             <h3 class="text-right subtotal"> Subtotal: <%= number_to_currency(@cart.total_price) %></h3>
                             <%= link_to raw('<i class="fa fa-shopping-cart"> </i> VIEW CART'),my_carts_path, :class => "btn btn-sm btn-danger" %>

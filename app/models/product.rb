@@ -1,9 +1,10 @@
 class Product < ActiveRecord::Base
 	paginates_per 4
-	validates :title, :description, :image_url, :presence => { message:"Không được bỏ trống" }
+	validates :title, :description, :presence => { message:"Không được bỏ trống" }
 	validates :price, numericality: {message:"Không phải số",greater_than_or_equal_to: 0}
 	validates :title, uniqueness: {message:"bi trung"}
 	validates :image_url,allow_blank: true, format: { with: %r{\.(gif|jpg|png)\Z}i ,message: 'Không phải file hình ảnh'}
+	mount_uploader :image_url, ProductUploader
 	def self.latest
 		Product.order(:updated_at).last
 	end

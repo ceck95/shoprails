@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorize
-  skip_before_action :is_admin
+  before_action :is_admin, only: [:show,:edit,:destroy]
   # GET /users
   # GET /users.json
   def index
-    @users = User.order(:name)
+    @user = User.new
   end
 
   # GET /users/1
@@ -29,10 +29,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_url, notice: "User #{@user.name} was successfully created." }
+        format.html { redirect_to store_url, notice: "User #{@user.name} was created." }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        format.html { render :index }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
