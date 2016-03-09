@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authorize
-  before_action :is_admin, only: [:show,:edit,:destroy]
+  before_action :authorize,only: [:edit,:new,:show]
+  before_action :is_admin, :if => "session[:user_id]",only: [:edit,:new,:show]
   # GET /users
   # GET /users.json
   def index

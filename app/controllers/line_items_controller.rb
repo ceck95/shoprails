@@ -54,7 +54,7 @@ class LineItemsController < ApplicationController
         format.html { redirect_to my_carts_url,notice: 'Update successfully.' }
         format.json { render :show, status: :ok, location: @line_item }
       else
-        format.html { redirect_to my_carts_url,notice: 'Fail.' }
+        format.html { redirect_to my_carts_url,flash: {error: 'Fail.'} }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
