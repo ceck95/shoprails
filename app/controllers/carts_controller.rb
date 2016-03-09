@@ -3,6 +3,7 @@ class CartsController < ApplicationController
   # GET /carts
   # GET /carts.json
   before_action :is_admin, :if => "session[:user_id]",only: [:edit,:index,:new,:show]
+  skip_before_action :authorize,only: [:destroy]
   include CurrentCart
   def index
     @carts = Cart.where(id: session[:cart_id])
