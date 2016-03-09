@@ -51,6 +51,6 @@ test:
 #
 production:
   <<: *default
-  database: e06xao7enfyetcps
-  username: wa144ynujoab7gh7
-  password: z6vlk9dyod8467d3
+  database: depot_production
+  username: depot
+  password: <%= ENV['DEPOT_DATABASE_PASSWORD'] %>
