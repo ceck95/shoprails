@@ -57,7 +57,7 @@ gem 'remotipart'
 #   gem 'turbo-sprockets-rails3'
 #   gem 'puma', '2.11.1'
 # end
-group :production do
-  gem 'pg','~> 0.18.4'
-  # gem 'rails_12factor'
-end
+# group :production do
+#   gem 'pg','~> 0.18.4'
+#   # gem 'rails_12factor'
+# end
