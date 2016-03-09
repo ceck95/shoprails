@@ -53,7 +53,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'remotipart'
 
-group :production do
-  gem 'turbo-sprockets-rails3'
-  gem 'puma', '2.11.1'
-end
+# group :production do
+#   gem 'turbo-sprockets-rails3'
+#   gem 'puma', '2.11.1'
+# end
