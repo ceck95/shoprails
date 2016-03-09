@@ -3,8 +3,8 @@
     <div class="row">
         <div class="breadcrumbDiv col-lg-12">
             <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="category.html">Category</a></li>
+                <li><a  onclick = "window.location='<%= url_for(action: 'index',controller: 'store') %>'">Home</a></li>
+                <!-- <li><a href="category.html">Category</a></li> -->
                 <li class="active">Cart</li>
             </ul>
         </div>
@@ -16,7 +16,7 @@
                     class="glyphicon glyphicon-shopping-cart"></i> Shopping cart </span></h1>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-5 rightSidebar col-xs-6 col-xxs-12 text-center-xs">
-            <h4 class="caps"><a href="category.html"><i class="fa fa-chevron-left"></i> Back to shopping </a></h4>
+            <h4 class="caps"><a onclick = "window.location='<%= url_for(action: 'index',controller: 'store') %>'"><i class="fa fa-chevron-left"></i> Back to shopping </a></h4>
         </div>
     </div>
     <!--/.row-->
@@ -77,10 +77,8 @@
                             <a data-confirm="Would you like delete all?" class="btn btn-block btn-danger" rel="nofollow" data-method="delete" href="<%= url_for(@cart) %>"><i class="fa fa-shopping-cart"> </i> DELETE CART</a> 
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-primary btn-block "
-                                                                          title="checkout" href="checkout-0.html"
-                                                                          style="margin-bottom:20px"> Proceed to
-                        checkout &nbsp; <i class="fa fa-arrow-right"></i> </a>
+                        <%= link_to raw('Proceed to
+                        checkout &nbsp; <i class="fa fa-arrow-right"></i>'), new_order_path, method: :get,:class => "btn btn-primary btn-block",style: "margin-bottom:20px"  %>
                             </div>
                         </div>
                     </div>

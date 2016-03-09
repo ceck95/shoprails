@@ -38,7 +38,7 @@
                 <h3 class="modal-title-site text-center"> Login to TSHOP </h3>
             </div>
             <div class="modal-body">
-                <%= render file: "/session/new.html.erb" %>
+                <%= render file: "/session/_new.html.erb" %>
             </div>
             <div class="modal-footer">
                 <p class="text-center"> Not here before? <a data-toggle="modal" data-dismiss="modal"
@@ -115,7 +115,7 @@
             <a href="<%= url_for(action: 'index',controller: 'line_items') %>"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"><i
                     class="fa fa-shopping-cart colorWhite"> </i> <span
                     class="cartRespons colorWhite"> View Cart </span></button></a>
-            <a class="navbar-brand " href="<%= url_for(action: 'index', controller: 'store') %>"> <img src="<%= image_path('logo.png') %>" alt="TSHOP"> </a>
+            <a class="navbar-brand " onclick = "window.location='<%= store_path %>'"><img src="<%= image_path('logo.png') %>" alt="TSHOP"> </a>
 
             <!-- this part for mobile -->
             <div class="search-box pull-right hidden-lg hidden-md hidden-sm">
@@ -133,14 +133,14 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#"> Home </a></li>
                 <!-- change width of megamenu = use class > megamenu-fullwidth, megamenu-60width, megamenu-40width -->
-                <li class="dropdown megamenu-80width "><a data-toggle="dropdown" class="dropdown-toggle" href="#"> SHOP
+              <!--   <li class="dropdown megamenu-80width "><a data-toggle="dropdown" class="dropdown-toggle" href="#"> SHOP
                     <b class="caret"> </b> </a>
                     <ul class="dropdown-menu">
-                        <li class="megamenu-content">
+                        <li class="megamenu-content"> -->
 
                             <!-- megamenu-content -->
 
-                            <ul class="col-lg-2  col-sm-2 col-md-2  unstyled noMarginLeft">
+                            <!-- <ul class="col-lg-2  col-sm-2 col-md-2  unstyled noMarginLeft">
                                 <li>
                                     <p><strong> Women Collection </strong></p>
                                 </li>
@@ -190,7 +190,7 @@
                                     typi <br>
                                     <span> $60 </span> </a></li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
             </ul>

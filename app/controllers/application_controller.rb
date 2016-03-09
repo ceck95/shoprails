@@ -15,8 +15,7 @@ class ApplicationController < ActionController::Base
   protected
     def authorize
     	unless User.find_by(id: session[:user_id])
-    		redirect_to login_url,notice: "Please log in"
-        flash[:notice] = "Please log in"
+    		redirect_to store_url,flash: {error: "Please log in"}
     	# respond_to do |format|
     	# 	format.js { @notice = 'Please log in' }
     	# end    
@@ -25,7 +24,7 @@ class ApplicationController < ActionController::Base
   protected
     def is_admin
         unless User.find_by(id: session[:user_id]).admin == true
-          redirect_to store_url, notice: "Not NhutUIT"
+          redirect_to store_url, flash:{ error: "Not NhutUIT" }
         end
     end
   protected

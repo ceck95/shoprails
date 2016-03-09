@@ -2,8 +2,8 @@ class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:create,:index]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authorize
-  
+  before_action :authorize,only: [:new,:edit]
+  before_action :is_admin ,:if => "session[:user_id]",only: [:new,:edit]
   # GET /line_items
   # GET /line_items.json
   def index
@@ -22,7 +22,7 @@ class LineItemsController < ApplicationController
 
   # GET /line_items/1/edit
   def edit
-    @line_item = LineItem.find(params[:id])
+  @line_item = LineItem.find(params[:id])
   respond_to { |format| format.html }
   end
 

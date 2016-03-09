@@ -2,8 +2,8 @@ class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   # GET /carts
   # GET /carts.json
+  skip_before_action :authorize
   include CurrentCart
-  before_action :set_cart
   def index
     @carts = Cart.where(id: session[:cart_id])
   end
@@ -56,7 +56,7 @@ class CartsController < ApplicationController
   def destroy
       respond_to do |format|
         if @cart.line_items.empty?
-        format.html { redirect_to store_url, notice: 'Blank cart.' }
+        format.html { redirect_to store_url, flash: {error: 'Blank cart.'} }
         format.json { head :no_content }
         else
         session[:cart_id] = nil

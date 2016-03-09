@@ -55,10 +55,6 @@
 <div class="container main-container">
 
 
-    <!-- Demo Features Content start -->
-
-    <!-- Demo Features Content end -->
-
     <!-- Main component call to action -->
 
     <div class="morePost row featuredPostContainer style2 globalPaddingTop ">
@@ -66,91 +62,6 @@
 
         <div class="container">
             <div class="row xsResponse">
-                <!-- <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                    <div class="product">
-                        <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
-                           data-placement="left">
-                            <i class="glyphicon glyphicon-heart"></i>
-                        </a>
-
-                        <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.html"><img src="<%= image_path('30.jpg') %>" alt="img"
-                                                                class="img-responsive"></a>
-
-                            <div class="promotion"><span class="new-product"> NEW</span> <span
-                                    class="discount">15% OFF</span></div>
-                        </div>
-                        <div class="description">
-                            <h4><a href="product-details.html">aliquam erat volutpat</a></h4>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span> <span class="old-price">$75</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
-                    </div>
-                </div> -->
-                <!--/.item-->
-                <!-- <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                    <div class="product">
-                        <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
-                           data-placement="left">
-                            <i class="glyphicon glyphicon-heart"></i>
-                        </a>
-
-                        <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.html"><img src="<%= image_path('30.jpg') %>" alt="img"
-                                                                class="img-responsive"></a>
-
-                            <div class="promotion"><span class="discount">15% OFF</span></div>
-                        </div>
-                        <div class="description">
-                            <h4><a href="product-details.html">ullamcorper suscipit lobortis </a></h4>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
-                    </div>
-                </div> -->
-                <!--/.item-->
-                <!-- <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                    <div class="product">
-                        <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
-                           data-placement="left">
-                            <i class="glyphicon glyphicon-heart"></i>
-                        </a>
-
-                        <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.html"><img src="<%= image_path('30.jpg') %>" alt="img"
-                                                                class="img-responsive"></a>
-
-                            <div class="promotion"><span class="new-product"> NEW</span></div>
-                        </div>
-                        <div class="description">
-                            <h4><a href="product-details.html">demonstraverunt lectores </a></h4>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
-                    </div>
-                </div> -->
-                <!--/.item-->
                   <% cache ['store', Product.latest] do %>
                   <div id="loadmorePD">
                     <%= render :partial =>'loadmore' %>
@@ -182,7 +93,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <ul class="no-margin brand-carousel owl-carousel owl-theme">
-                    <li><a><img src="<%= image_path('3.png') %>" alt="img"></a></li>
+                    <li><a><%= image_tag('3.png') %></a></li>
                     <li><img src="<%= image_path('3.png') %>" alt="img"></li>
                     <li><img src="<%= image_path('3.png') %> "alt="img"></li>
                     <li><img src="<%= image_path('4.png') %>" alt="img"></li>
@@ -207,20 +118,5 @@
 
 </div>
 <!--main-container-->
-
-<!--/.parallax-section-->
-
-<!-- Product Details Modal  -->
-<!-- Modal -->
-<div class="modal fade" id="productSetailsModalAjax" tabindex="-1" role="dialog"
-     aria-labelledby="productSetailsModalAjaxLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
 <!-- End Modal -->
                 

@@ -40,10 +40,10 @@
 //= require icheck.min
 //= require grids
 //= require owl.carousel.min
-//= require select2.min
+// require select2.min
 //= require bootstrap.touchspin
 //= require home
-//= require script
+// = require script
 //= require test
 //= require rails.validations
 //= require_tree .

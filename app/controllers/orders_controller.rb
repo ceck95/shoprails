@@ -2,7 +2,8 @@ class OrdersController < ApplicationController
   include CurrentCart
 
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  
+  before_action :authorize,only: [:show,:edit,:index,:destroy]
+  before_action :is_admin ,:if => "session[:user_id]",only: [:show,:edit,:index,:destroy]
   # GET /orders
   # GET /orders.json
   def index
@@ -17,7 +18,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     if @cart.line_items.empty?
-      redirect_to store_url, notice: "Cart blank."
+      redirect_to store_url, flash: {error: 'Blank cart.'}
       return
     end
     @order = Order.new
