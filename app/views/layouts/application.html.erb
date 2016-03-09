@@ -112,7 +112,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
                     class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span
                     class="icon-bar"> </span> <span class="icon-bar"> </span></button>
-            <a href="<%= url_for(action: 'index',controller: 'line_items') %>"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"><i
+            <a onclick = "window.location='<%= my_carts_path %>'"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"><i
                     class="fa fa-shopping-cart colorWhite"> </i> <span
                     class="cartRespons colorWhite"> View Cart </span></button></a>
             <a class="navbar-brand " onclick = "window.location='<%= store_path %>'"><img src="<%= image_path('logo.png') %>" alt="TSHOP"> </a>

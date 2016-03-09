@@ -1,15 +1,13 @@
 <tr class="miniCartProduct">
     <td style="width:20%" class="miniCartProductThumb">
-        <div><a href="product-details.html"> <img src="<%= image_path(line_item.product.image_url) %> " alt="img">
-        </a></div>
+        <div><img src="<%= image_path(line_item.product.image_url) %> " alt="img"></div>
     </td>
     <td style="width:40%">
         <div class="miniCartDescription">
-            <h4><a href="product-details.html"> <%= line_item.product.title %> </a></h4>
+            <h4><%= line_item.product.title %></h4>
             <div class="price"><span> <%= number_to_currency(line_item.product.price) %> </span></div>
         </div>
     </td>
    <td style="width:10%" class="miniCartQuantity"><a> <%= line_item.quantity %> </a></td>
-   <td style="width:15%" class="miniCartSubtotal"><span> <%= number_to_currency(line_item.total_price) %> </span></td>
-   <td style="width:5%" class="delete"><a> x </a></td>
+   <td style="width:20%" class="miniCartSubtotal"><span> <%= number_to_currency(line_item.total_price) %> </span></td>
 </tr>
