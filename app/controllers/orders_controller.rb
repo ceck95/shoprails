@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
-        format.html { redirect_to store_url, notice: 'Tks you order compelete' }
+        format.html { redirect_to store_path, notice: 'Tks you order compelete' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new ,notice: 'Ban chua login'}
