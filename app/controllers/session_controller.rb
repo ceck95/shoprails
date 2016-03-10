@@ -9,8 +9,6 @@ class SessionController < ApplicationController
   	if user and user.authenticate(params[:password])
   		session[:user_id] = user.id
       session[:cart_id] = nil
-      cart = Cart.find_by(user_id: user.id)
-      session[:cart_id] = cart.id
   		redirect_to store_url
     # elsif user and !user.authenticate(params[:password])
     #   redirect_to store_url, notice: "sai pass"

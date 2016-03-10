@@ -11,5 +11,9 @@ skip_before_action :authorize
 				f.html
 			end
 		end
+		if session[:user_id]
+		cart = Cart.find_by(user_id: user.id)
+      	session[:cart_id] = cart.id
+      	end
 	end
 end
